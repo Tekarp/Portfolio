@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
-const profilePhoto = "/ProfilePic.jpg";
+const profilePhoto = `${process.env.PUBLIC_URL || ""}/ProfilePic.jpg`;
 
 const Navbar = (props) => {
   const [hireMeClick, setHireMeClick] = useState(false);

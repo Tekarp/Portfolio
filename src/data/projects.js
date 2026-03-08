@@ -2,6 +2,7 @@
  * Portfolio projects: Games + Tools & Engineering
  * Videos in public/: game2.mp4 (Square Game), game3.mp4 (Rat Stranding), trailer.mp4 (ScreamTeam), voxelTerrain.mov (VoxelTerrainBuilder)
  */
+const base = process.env.PUBLIC_URL || "";
 
 export const GAMES = [
   {
@@ -29,8 +30,8 @@ export const GAMES = [
     overview: "A physics-based platformer focusing on inertia and surface grip mechanics. The player controls a cube that sticks and slides along walls and has to make preserve momentum while doing it.",
     role: "A solo project developed over a weekend. The goal for this project was to experiment juicing out a game and learning about game feel. It also taught me alot about level design and Unity's physics system.",
     tech: "Unity, C#",
-    thumbnail: "/game2.mp4",
-    videoSrc: "/game2.mp4",
+    thumbnail: `${base}/game2.mp4`,
+    videoSrc: `${base}/game2.mp4`,
     youtubeEmbedId: null,
     playLink: "https://tekarp.github.io/SquareGame/",
     playLabel: "Play Game",
@@ -45,8 +46,8 @@ export const GAMES = [
     overview: "Created during Brackey's Game Jam, Rat Stranding combines stealth and strategy with environmental puzzles. Players control a rat navigating a dystopian underground world.",
     role: "My first project in Godot. My task was to deal with Enemy AI navigation and behaviour. This included implementing a basic state machine and implementing A* to follow the rat around.",
     tech: "Godot Engine, GDScript",
-    thumbnail: "/game3.mp4",
-    videoSrc: "/game3.mp4",
+    thumbnail: `${base}/game3.mp4`,
+    videoSrc: `${base}/game3.mp4`,
     youtubeEmbedId: null,
     playLink: "https://rslashsp.itch.io/ratstranding",
     playLabel: "Play on itch.io",
@@ -77,8 +78,8 @@ export const GAMES = [
     overview: "Scream Team is a 3D Buisness sim game where players must balance profits with employee satisfaction as they manage the forces of the undead. Created for Scream Jam 2025.",
     role: "My first foray as the lead designer. My role included writing the GDD for this project, managing and coordinating a team that spanned various countries and timezones. My tasks included systems design, level and quest design, blueprint scripting  as well as designing the game economy and progression.",
     tech: "Unreal Engine 5",
-    thumbnail: "/trailer.mp4",
-    videoSrc: "/trailer.mp4",
+    thumbnail: `${base}/trailer.mp4`,
+    videoSrc: `${base}/trailer.mp4`,
     youtubeEmbedId: null,
     playLink: null,
     playLabel: null,
@@ -96,10 +97,10 @@ export const TOOLS_ENGINEERING = [
     overview: "A voxel terrain builder tool for creating and editing terrain and levels. Built as part of my graduation class :CSCI 580. Uses SDF Spheres to create a smooth and computationally cheap terrain based on a variety of noise functions. Also allows you to interact and modify this terrain with brushes",
     role: "My task included: Setting up the Vulkan Renderering Pipeline. Implementing ImGui. Adding Interactivity using camera and brushes. ",
     tech: "Vulkan,C++",
-    thumbnail: "/voxelTerrain.mov",
-    videoSrc: "/voxelTerrain.mov",
+    thumbnail: `${base}/voxelTerrain.mov`,
+    videoSrc: `${base}/voxelTerrain.mov`,
     youtubeEmbedId: null,
-    detailImage: "/VoxelTerrainBuilder.png",
+    detailImage: `${base}/VoxelTerrainBuilder.png`,
     playLink: null,
     playLabel: null,
     status: "published",

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ResumeBox from "../components/Resume/ResumeBox";
 import SkillsProgress from "../components/Resume/SkillProgress";
 
-const RESUME_PDF = "/Resume_Praket_Aggarwal.pdf"; // place PDF in public/
+const RESUME_PDF = `${process.env.PUBLIC_URL || ""}/Resume_Praket_Aggarwal.pdf`;
 
 const experience = [
   {
