@@ -28,7 +28,7 @@ const About = () => {
         className="absolute inset-0 w-full h-full object-cover z-0"
         aria-hidden
       >
-        <source src="/game1.mp4" type="video/mp4" />
+        <source src={`${process.env.PUBLIC_URL || ""}/game1.mp4`} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-black/70 z-[1]" aria-hidden />
 
@@ -99,7 +99,7 @@ const About = () => {
 
       <div className="sm:px-5 px-7 max-w-2xl lg:max-w-full pb-10 lg:pb-0 flex-shrink-0">
         <img
-          src="/ProfilePic.jpg"
+          src={`${process.env.PUBLIC_URL || ""}/ProfilePic.jpg`}
           alt="Praket Aggarwal"
           className="w-full aspect-square max-w-sm mx-auto rounded-2xl btn-shadow object-cover"
         />

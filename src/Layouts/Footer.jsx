@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FiGithub } from "react-icons/fi";
 import { FiLinkedin } from "react-icons/fi";
 import { FiMail } from "react-icons/fi";
-const profilePhoto = "/ProfilePic.jpg";
+const profilePhoto = `${process.env.PUBLIC_URL || ""}/ProfilePic.jpg`;
 
 const Footer = () => {
   return (
