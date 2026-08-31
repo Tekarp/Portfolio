@@ -1,5 +1,5 @@
 
-const base = "/Portfolio";
+const base = process.env.PUBLIC_URL || "/Portfolio";
 
 export const GAMES = [
   {
