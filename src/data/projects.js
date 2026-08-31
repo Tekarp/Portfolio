@@ -1,8 +1,5 @@
-/**
- * Portfolio projects: Games + Tools & Engineering
- * Videos in public/: game2.mp4 (Square Game), game3.mp4 (Rat Stranding), trailer.mp4 (ScreamTeam), voxelTerrain.mov (VoxelTerrainBuilder)
- */
-const base = process.env.PUBLIC_URL || "";
+
+const base = "/Portfolio";
 
 export const GAMES = [
   {
