@@ -6,15 +6,15 @@ import { FiMail } from "react-icons/fi";
 
 const About = () => {
   const name = "Praket Aggarwal";
-  const profession = "Tools & Gameplay Engineer";
-  const aboutMe = `I'm a tools and gameplay engineer and an overall lover of videogames. My goal as an engineer is to make powerful tools capable of making the jobs of other engineers and designers easier. Some of my favourite games Include: Pokemon Platinum, Red Dead Redemption 2 and Baldur's Gate 3`;
+  const aboutMe = "I'm a Master's student in Computer Science at the University of Southern California, specializing in Game Development.";
   const githubLink = "https://github.com/tekarp";
   const linkedinLink = "https://www.linkedin.com/in/praket-aggarwal/";
   const email = "praketaggarwal@gmail.com";
 
   const keyPoints = [
-    "Gameplay systems and engine tooling in Unity. Also experienced with Unreal.",
-    
+    "Gameplay systems and combat design in Unity and Unreal.",
+    "AI programming for enemy behavior logic, and decision-making systems.",
+    "Engine, rendering, and tooling work.",
   ];
 
   return (
@@ -36,14 +36,13 @@ const About = () => {
       <div className="home-wrapper-1 lg:w-3/5 w-full p-5 xl:pt-20">
         <div className="flex flex-col justify-center">
           <h6 className="accent-text mb-6 tracking-widest lg:text-md text-xs">
-            TOOLS & GAMEPLAY ENGINEER
+            GAMEPLAY ENGINEER
           </h6>
           <h1 className="text-white lg:text-6xl text-4xl font-bold mb-3">
             Hi, I'm{" "}
             <span className="accent-text name-accent">{name}</span>
           </h1>
           <h2 className="lg:text-5xl text-3xl text-white font-semibold capitalize">
-            {profession}
           </h2>
           <p className="w-full text-gray-300 mt-8 lg:text-lg text-md leading-8 lg:leading-9">
             {aboutMe}
@@ -88,10 +87,10 @@ const About = () => {
           </div>
           <div className="mt-6 md:mt-0">
             <Link
-              to="/resume"
+              to="/projects"
               className="accent-text font-semibold px-5 py-3 rounded-md btn-shadow inline-block hover:opacity-90 transition"
             >
-              View Resume
+              View Projects
             </Link>
           </div>
         </div>

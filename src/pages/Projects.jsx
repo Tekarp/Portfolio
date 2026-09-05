@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { GAMES, TOOLS_ENGINEERING } from "../data/projects";
+import {
+  GAME_ENGINE_PROJECTS,
+  RENDERING_PROJECTS,
+  GAMEPLAY_AI_PROJECTS,
+} from "../data/projects";
 
 function ProjectCard({ project }) {
   const isVideoThumb = project.thumbnail && (project.thumbnail.endsWith(".mp4") || project.thumbnail.endsWith(".webm") || project.thumbnail.endsWith(".mov"));
@@ -9,7 +13,7 @@ function ProjectCard({ project }) {
   return (
     <Link
       to={`/project/${project.id}`}
-      className="block rounded-xl btn-shadow feature-box text-gray-300 font-secondary overflow-hidden hover:opacity-95 transition h-full"
+      className="block rounded-xl btn-shadow feature-box text-gray-300 font-secondary overflow-hidden hover:opacity-95 transition h-full w-full"
     >
       <div className="aspect-video bg-[#1a1b1e] relative overflow-hidden">
         {isVideoThumb ? (
@@ -28,15 +32,10 @@ function ProjectCard({ project }) {
             {project.title.charAt(0)}
           </div>
         )}
-        {project.status === "ongoing" && (
-          <span className="absolute top-2 right-2 bg-amber-600/90 text-white text-xs font-semibold px-2 py-1 rounded">
-            Ongoing
-          </span>
-        )}
       </div>
-      <div className="p-5">
-        <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-        <p className="accent-text text-sm tracking-wider uppercase mt-1">{project.subtitle}</p>
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+        <p className="accent-text text-[11px] tracking-wider uppercase mt-1">{project.subtitle}</p>
         <p className="text-gray-400 mt-2 text-sm leading-relaxed">{project.shortDescription}</p>
       </div>
     </Link>
@@ -45,15 +44,19 @@ function ProjectCard({ project }) {
 
 function Section({ title, subtitle, projects }) {
   return (
-    <section className="mb-20">
-      <div className="mb-10">
-        <h6 className="accent-text tracking-widest text-sm font-medium font-primary">{subtitle}</h6>
-        <h2 className="text-4xl lg:text-5xl font-secondary text-gray-300 font-bold mt-2">{title}</h2>
+    <section className="mb-12">
+      <div className="mb-5">
+        <h6 className="accent-text tracking-widest text-[11px] font-medium font-primary">{subtitle}</h6>
+        <h2 className="text-2xl lg:text-4xl font-secondary text-gray-300 font-bold mt-1">{title}</h2>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
-        {projects.map((p) => (
-          <ProjectCard key={p.id} project={p} />
-        ))}
+      <div className="overflow-x-auto pb-3 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+        <div className="flex gap-4 min-w-max">
+          {projects.map((p) => (
+            <div key={p.id} className="w-[280px] lg:w-[320px] flex-shrink-0">
+              <ProjectCard project={p} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -62,25 +65,26 @@ function Section({ title, subtitle, projects }) {
 const Projects = () => {
   return (
     <div className="max-w-6xl xl:m-auto px-5 pt-28 pb-20">
-      <div className="mb-16">
-        <h6 className="accent-text tracking-widest lg:text-sm text-xs font-medium font-primary">PORTFOLIO</h6>
-        <h1 className="lg:text-6xl text-4xl font-secondary text-gray-300 font-bold mt-3">
+      <div className="mb-10">
+        <h1 className="lg:text-5xl text-4xl font-secondary text-gray-300 font-bold mt-3">
           Projects
         </h1>
-        <p className="text-gray-400 mt-4 max-w-2xl">
-          Game projects and tools I've built or contributed to. Click any card for details, role, and tech.
-        </p>
       </div>
 
       <Section
-        title="Games"
-        subtitle="GAME PROJECTS"
-        projects={GAMES}
+        title="Game Engine"
+        subtitle="GAME ENGINE"
+        projects={GAME_ENGINE_PROJECTS}
       />
       <Section
-        title="Tools & Engineering"
-        subtitle="ENGINEERING & TOOLS"
-        projects={TOOLS_ENGINEERING}
+        title="Rendering"
+        subtitle="RENDERING"
+        projects={RENDERING_PROJECTS}
+      />
+      <Section
+        title="Gameplay & AI Programming"
+        subtitle="GAMEPLAY & AI PROGRAMMING"
+        projects={GAMEPLAY_AI_PROJECTS}
       />
     </div>
   );

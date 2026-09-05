@@ -17,6 +17,7 @@ const ProjectDetail = () => {
 
   const hasVideo = project.videoSrc || project.youtubeEmbedId;
   const isYoutube = !!project.youtubeEmbedId;
+  const roleItems = Array.isArray(project.role) ? project.role : [project.role];
 
   return (
     <div className="max-w-4xl mx-auto px-5 pt-28 pb-20">
@@ -27,14 +28,8 @@ const ProjectDetail = () => {
       <header className="mb-8">
         <h1 className="text-4xl lg:text-5xl font-bold text-white font-secondary">{project.title}</h1>
         <p className="accent-text tracking-wider uppercase mt-2">{project.subtitle}</p>
-        {project.status === "ongoing" && (
-          <span className="inline-block mt-2 bg-amber-600/20 text-amber-400 text-sm font-semibold px-3 py-1 rounded">
-            Ongoing
-          </span>
-        )}
       </header>
 
-      {/* Video / YouTube embed – main thing people see */}
       {hasVideo && (
         <div className="rounded-xl overflow-hidden btn-shadow mb-10 aspect-video bg-black">
           {isYoutube ? (
@@ -60,7 +55,6 @@ const ProjectDetail = () => {
         </div>
       )}
 
-      {/* Optional extra image on project page (e.g. VoxelTerrainBuilder) */}
       {project.detailImage && (
         <div className="rounded-xl overflow-hidden btn-shadow mb-10">
           <img
@@ -74,17 +68,21 @@ const ProjectDetail = () => {
       <div className="space-y-8 text-gray-300 font-primary">
         <section>
           <h3 className="text-xl font-semibold text-white mb-2">Overview</h3>
-          <p className="leading-relaxed">{project.overview}</p>
+          <p className="leading-relaxed text-base">{project.overview}</p>
         </section>
 
         <section>
-          <h3 className="text-xl font-semibold text-white mb-2">My Role</h3>
-          <p className="leading-relaxed">{project.role}</p>
+          <h3 className="text-xl font-semibold text-white mb-3">My Role</h3>
+          <ul className="space-y-3 pl-5 list-disc text-base leading-relaxed text-gray-200">
+            {roleItems.map((item, index) => (
+              <li key={`${project.id}-role-${index}`}>{item}</li>
+            ))}
+          </ul>
         </section>
 
         <section>
           <h3 className="text-xl font-semibold text-white mb-2">Technologies</h3>
-          <p className="leading-relaxed">{project.tech}</p>
+          <p className="leading-relaxed text-base">{project.tech}</p>
         </section>
 
         {project.playLink && (
